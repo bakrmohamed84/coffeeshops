@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "coffeeshops": {
+    "host": "ds153188-a0.mlab.com",
+    "port": 53188,
+    "url": "mongodb://maskani:DDmskn2018@ds153188-a0.mlab.com:53188,ds153188-a1.mlab.com:53188/coffeeshops?replicaSet=rs-ds153188",
+    "database": "coffeeshops",
+    "password": "DDmskn2018",
+    "name": "coffeeshops",
+    "user": "maskani",
+    "connector": "mongodb"
+  }
+}

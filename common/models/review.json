@@ -1,0 +1,72 @@
+{
+  "name": "review",
+  "plural": "review",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "comment": {
+      "type": "string",
+      "required": true
+    },
+    "rate": {
+      "type": "number"
+    },
+    "reviewerId": {
+      "type": "string"
+    },
+    "shopId": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "reviewer": {
+      "type": "belongsTo",
+      "model": "reviewer",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "shop": {
+      "type": "belongsTo",
+      "model": "shop",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "create"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW",
+      "property": "write"
+    }
+  ],
+  "methods": {}
+}
